@@ -1,0 +1,321 @@
+/* ------ Media Query (medium and small screen) ------- */
+
+@media screen and (max-width: 1024px){
+    .container{
+        max-width: var(--container-width-md);
+    }
+    
+    h1{
+        font-size:2rem;
+    }
+
+    h2{
+        font-size:1.6rem;
+    }
+
+    .nav_toggle-btn{
+        display: inline-block;
+        font-size:1.8rem;
+        color: var(--color-gray-100);
+        background: transparent;
+        border: none;
+        cursor: pointer;   
+    }
+    .nav_links{
+        position:absolute;
+        top:100%;
+        right:0;
+        flex-direction: column;
+        gap:0;
+        perspective: 400px;
+    }
+    /* .active-nav{
+        display:none;
+    } */
+    .active-nav,.active-nav::after{
+        display: none;
+    }
+    .nav_links li{
+        height: 4rem;
+        width: 100%;
+        box-shadow: -2rem 2rem 5rem rgba(0,0,0,0.4);
+        background:var(--color-primary);
+        animation: navAnimation 600ms ease forwards ;
+        transform: rotateX(90deg);
+        opacity: 0;
+        transform-origin: top;
+    }
+
+    .nav_links li:nth-child(2){
+        animation-delay: 200ms;
+    }
+
+    .nav_links li:nth-child(3){
+        animation-delay: 400ms;
+    }
+
+    .nav_links li:nth-child(4){
+        animation-delay: 600ms;
+    }
+
+    .nav_links li:nth-child(5){
+        animation-delay: 800ms;
+    }
+
+    .nav_links li:nth-child(6){
+        animation-delay: 1s;
+    }
+
+    .nav_links li:nth-child(7){
+        animation-delay: 1.2s;
+    }
+
+    @keyframes navAnimation {
+        to{
+            transform: rotateX(0);
+            opacity: 1;
+        }
+    }
+
+    .nav_links li a{
+        background:var(--color-primary);
+        height:100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 1rem 5rem 1rem 3rem;
+    }
+
+    .show_nav{
+        display: flex;
+    }
+    .hide_nav{
+        display:none;
+    }
+
+    .main_header{
+        height: fit-content;
+        padding: 12rem 0 ;
+    }
+    .main_header-container{
+        gap: 0;
+    }
+    .main_header-circle{
+        height: 16rem;
+        width: 16rem;
+    }
+
+    /* --- Programs --- */
+
+    .programs_wrapper{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* --- Values --- */
+    .values_container{
+        grid-template-columns: 1fr;
+        justify-content: center;
+        gap:4rem;
+    }
+    .values_wrapper{
+        gap:4rem 3rem;
+    }
+    .values_image{
+        display: none;
+    }
+
+    /* --- FAQs --- */
+    .faqs_wrapper{
+        grid-template-columns: 1fr;
+    }
+
+   /* --- testimonials --- */
+   .testimonials{
+    width: 75%;
+   }
+
+   /* --- Footer --- */
+   .footer_container{
+    grid-template-columns: 1fr 1fr;
+    gap:4rem;
+
+   }
+
+   /* --- About us --- */
+   .header_content{
+    width: 75%;
+   }
+
+   .about_section-image{
+    width: 60%;
+   }
+
+   .about_section-content h2{
+    font-size:1.2rem,
+   }
+
+   .about_story-container,
+   .about_mission-container,
+   .about_vision-container{
+    grid-template-columns: 1fr;
+    gap:3rem;
+   }
+   
+   .about_vision .about_section-image{
+    grid-row: 1;
+   }
+
+   /* --- Gallery --- */
+
+   .gallery_container{
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+   }
+   .gallery_container article{
+    border: 0;
+   }
+
+   /* --- Plans --- */
+   .plans_container{
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+   }
+
+   /* ----- Trainer section ccs ----- */
+
+   .trainers_container{
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+   }
+}
+
+@media screen and (max-width: 600px){
+    h1{
+        font-size:2.2rem;
+        line-height: 1.3;
+    }
+
+    /* --- Hero --- */
+    .main_header{
+        margin-top: 0;
+        padding: 12rem 0 0;
+        height: 100vh;
+    }
+    .main_header-image, .main_header-circle{
+        display: none;
+    }
+
+    .main_header-container{
+        grid-template-columns: 1fr;
+    }
+
+    /* --- Programs --- */
+    .programs_wrapper{
+        grid-template-columns: 1fr;
+        gap:2rem;
+        margin-top:3rem;    
+    }
+    
+    .programs_progrems{
+        width: 84%;
+        margin: 0 auto;
+    }
+    
+    /* --- Programs --- */
+    .values_wrapper{
+        grid-template-columns: 1fr;
+        gap:3rem;
+    }
+    .card.values_value{
+        width: 84%;
+        margin-inline: auto ;
+    }
+
+     /* --- FAQs --- */
+     .faqs_wrapper{
+        gap:1rem;
+        margin-top: 3rem;
+     }
+
+    /* --- Testimonials --- */
+    .testimonials{
+        width: 100%;
+    }
+
+    /* --- Footer --- */
+    .footer_container{
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .footer_container article{
+        align-items: center;
+    }
+
+    .footer_container article p{
+        text-align: center;
+    }
+
+    /* --- About us --- */
+   .header{
+    height: fit-content;
+   }
+
+   .header_content{
+    width: var(--container-width-md);
+    padding: 3rem 0;
+   }
+
+   .header_content p{
+    font-size: 0.85rem;
+    max-width: fit-content;
+   }
+
+   .about_section-image{
+    width: 80%;
+    margin: auto;
+   }
+
+   .about_story-container,
+   .about_mission-container,
+   .about_vision-container{
+    gap:2rem;
+   }
+
+   .contatct_wrapper{
+    gap:1.5rem;
+   }
+   .contatct_wrapper a{
+    padding: 1rem;
+    font-size:1.2rem;
+    border-radius: 1rem;
+   }
+
+    /* --- Gallery --- */
+
+    .gallery_container{
+        grid-template-columns: 1fr;
+        gap: 1rem;
+       }
+
+    /* --- Plans --- */
+   .plans_container{
+    grid-template-columns: 1fr;
+   }
+   .plan{
+    width:90%;
+    margin-inline: auto;
+   }
+
+   /* ----- Trainer section ccs ----- */
+
+   .trainers_container{
+    grid-template-columns: 1fr;
+    gap: 2rem;
+   }
+
+   .card.trainer{
+    width: 90%;
+    margin-inline: auto;
+   }
+}
